@@ -3,11 +3,11 @@ import { Pool } from 'pg'
 import { migrationProvider } from './migrations'
 import { DatabaseSchema } from './schema'
 
-export const createDb = (location: string): Database => {
+export const createDb = (url: string, user: string, password: string): Database => {
   return new Kysely<DatabaseSchema>({
     dialect: new PostgresDialect({
       pool: new Pool({
-        host: location,
+        connectionString:  `postgres://${user}:${password}@${url}`
     }),
   })
 })
