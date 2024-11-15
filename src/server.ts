@@ -31,7 +31,7 @@ export class FeedGenerator {
 
   static create(cfg: Config) {
     const app = express()
-    const db = createDb(cfg.postgresUrl, cfg.postgresUser, cfg.postgresPassword)
+    const db = createDb(cfg.connectionString)
     const firehose = new FirehoseSubscription(db, cfg.subscriptionEndpoint)
 
     const didCache = new MemoryCache()

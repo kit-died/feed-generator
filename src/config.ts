@@ -12,9 +12,7 @@ export type Config = {
   listenhost: string
   hostname: string
   sqliteLocation: string
-  postgresUrl: string
-  postgresUser: string
-  postgresPassword: string
+  connectionString: string
   subscriptionEndpoint: string
   serviceDid: string
   publisherDid: string
